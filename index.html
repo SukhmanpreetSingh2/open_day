@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Generatore QR Open Day</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="icon" href="https://ilgiuntopv.it/wp-content/uploads/2021/12/Giunto512x512.png">
+</head>
+
+<body>
+    <div class="card">
+        <h1>Generatore QR Open Day</h1>
+  
+        <p>
+            Carica il file dell’Open Day<br>
+            e genera automaticamente il QR Code<br>
+            con invio di email automatiche
+        </p>
+
+        <div class="qr">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=OpenDay" alt="QR Code">
+        </div>
+
+        <!-- Form per invio file -->
+        <form id="uploadForm" method="POST" enctype="multipart/form-data">
+            <input type="file" name="file" required>
+            <button type="submit">Invia</button>
+        </form>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
